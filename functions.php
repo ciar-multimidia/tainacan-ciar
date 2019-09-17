@@ -1,13 +1,72 @@
 <?php
+// ========================================//
+// SETUPs
+// ========================================// 
+add_action( 'after_setup_theme', 'ciar_setup' );
+function ciar_setup() {
+	// estilos e scripts
+	add_action( 'wp_enqueue_scripts', 'ciar_estilo_script', PHP_INT_MAX); 
 
-add_action( 'wp_enqueue_scripts', 'enqueue_child_theme_styles', PHP_INT_MAX);
-function enqueue_child_theme_styles() {
+    // seguranca e limpeza
+    add_filter( 'style_loader_src', 'scripts_remove_versao', 9999 );
+    add_filter( 'script_loader_src', 'scripts_remove_versao', 9999 );
+    add_filter( 'style_loader_src', 'remove_query_string', 10, 2 );
+    add_filter( 'script_loader_src', 'remove_query_string', 10, 2 );
+    
+    remove_action( 'wp_head', 'wp_shortlink_wp_head', 10);
+    remove_action( 'wp_head', 'wp_generator' );
+    remove_action( 'wp_head', 'wp_generator_tag' );
+    remove_action( 'wp_head', 'wp_resource_hints', 2);
+    remove_action( 'wp_head', 'rsd_link' );
+    remove_action( 'wp_head', 'feed_links', 2 );
+    remove_action( 'wp_head', 'feed_links_extra', 3 );
+    remove_action( 'wp_head', 'rest_output_link_wp_head');
+    remove_action( 'template_redirect', 'rest_output_link_header', 11, 0 );
+    remove_action( 'wp_head', 'wlwmanifest_link');
+}
+
+// ========================================//
+// CSS E SCRIPTS
+// ========================================// 
+function ciar_estilo_script() {
+	// estilo
 	$parent_style = 'parent-style';
 	wp_enqueue_style( $parent_style, get_template_directory_uri().'/style.css' );
 	wp_enqueue_style( 'custom-style', get_stylesheet_directory_uri().'/css/layout.css', array( $parent_style ) );
+
+	// jquery atualizado
+    wp_deregister_script( 'jquery-core' );
+    wp_register_script( 'jquery-core', "//code.jquery.com/jquery-3.4.1.min.js", array(), '' );
+    wp_deregister_script( 'jquery-migrate' );
+    wp_register_script( 'jquery-migrate', "//code.jquery.com/jquery-migrate-3.1.0.min.js", array(), '' );
+
+    // scripts utilizados
+    wp_enqueue_script( 'fancybox', '//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', array('jquery-core'), '', true);
+    wp_enqueue_script( 'scripts', get_stylesheet_directory_uri() . '/js/app.js', array('jquery-core'), '', true);
 }
 
 
+// ========================================//
+// SEGURANCA
+// ========================================// 
+// remover versão do wp nos scripts 
+function scripts_remove_versao( $src ) {
+    if ( strpos( $src, 'ver=' . get_bloginfo( 'version' ) ) )
+        $src = remove_query_arg( 'ver', $src );
+    return $src;
+}
+// retirar query strings de scripts e css
+function remove_query_string( $src ) {
+ if( strpos( $src, '?ver=' ) )
+ $src = remove_query_arg( 'ver', $src );
+ return $src;
+}
+
+
+
+// ========================================//
+// MIGALHAS DE PAO - NAVEGACAO
+// ========================================// 
 function breadcrumb() {
 
 	$showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show

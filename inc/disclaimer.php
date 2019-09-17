@@ -1,0 +1,1 @@
+As imagens dispostas aqui podem ser usados e compartilhados por terceiros, inclusive em sala de aula e pesquisas acadêmicas, desde que acompanhados dos créditos de seus autores, que possuem inteira responsabilidade pelo conteúdo. A distribuição é gratuita e o uso comercial proibido.

@@ -1,0 +1,37 @@
+<div class="modalciar" id="ficha-tecnica">
+	<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/bg_ficha_tecnica.jpg" alt="Ficha Técnica Ciar UFG">
+
+	<article>
+		<h1>Acervo de imagens Ciar UFG</h1>
+		<div class="seta"></div>
+
+	    <p>A equipe de publicação é formada por designers com experiência em desenvolvimento de projetos gráficos nas áreas de editorial, mídias interativas e audiovisual. Este acervo é o resultado de demandas de materiais didáticos e de comunicação projetados pelo CIAR em parceria com cursos do ensino à distância, ensino presencial, órgãos administrativos e unidades acadêmicas da UFG.</p>
+
+		<h2>Universidade Federal de Goiás</h2>
+		<ul>
+			<li><strong>Reitor</strong> • Edward Madureira Brasil</li>
+			<li><strong>Vice-Reitora</strong> • Sandramara Matias Chaves</li>
+		</ul>
+
+		<h2>Centro Integrado de Aprendizagem em Rede</h2>
+		<ul>
+			<li><strong>Diretora</strong> • Marília de Goyaz</li>
+			<li><strong>Vice-diretora</strong> • Silvia Figueiredo</li>
+			<li><strong>Coordernadora de Publicação</strong> • Ana Bandeira</li>
+		</ul>
+
+		<p class="align-center">
+			Todas as imagens foram desenvolvidas pela <strong>Equipe de Publicação CIAR</strong>.<br>
+			Conheça também nosso acervo de materiais produzidos: <a href="https://producao.ciar.ufg.br/" target="_blank">producao.ciar.ufg.br</a>
+		</p>
+
+		<p><em><p><?php get_template_part('inc/disclaimer'); ?></p></em></p>
+
+		<ul class="logos">
+			<li><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo_publicaciar.svg" alt=""></li>
+			<li><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo_ciarficha.svg" alt=""></li>
+			<li><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo_patriamada.svg" alt=""></li>
+		</ul>
+
+	</article>
+</div>

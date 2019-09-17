@@ -1,26 +1,33 @@
-	</section>
+<?php 
+	echo '</section>';
 	
-	<footer class="tainacan-footer">
+	$marginFooter = '';
+	if (is_home() || is_front_page()) {
+		$marginFooter = ' style="margin-top:0"';
+	}
 
-		<div class="container-fluid max-large margin-one-column copyleft">
-			<p>As imagens dispostas aqui podem ser usados e compartilhados por terceiros, inclusive em sala de aula e pesquisas acadêmicas, desde que acompanhados dos créditos de seus autores, que possuem inteira responsabilidade pelo conteúdo. A distribuição é gratuita e o uso comercial proibido.</p>
-		</div>
+	echo '<footer class="tainacan-footer"'.$marginFooter.'>';
+
+		echo '<div class="container-fluid max-large margin-one-column copyleft">';
+			get_template_part('inc/disclaimer'); 
+		echo '</div>';
 	
-		<div class="container-fluid max-large margin-one-column creditos">
-			<div class="tainacan">
-				<p>Tecnologia <a href="https://wordpress.org/" target="_blank" rel="noopener">Wordpress</a> e</p>
-				<a href="https://tainacan.org/" target="_blank" rel="noopener"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo-tainacan.svg" alt="Tainacan logo"></a>
-			</div>
+		echo '<div class="container-fluid max-large margin-one-column creditos">';
+			echo '<div class="tainacan">';
+				echo '<p>Tecnologia <a href="https://wordpress.org/" target="_blank" rel="noopener">Wordpress</a> e</p>';
+				echo '<a href="https://tainacan.org/" target="_blank" rel="noopener"><img src="'.get_stylesheet_directory_uri().'/img/logo-tainacan.svg" alt="Tainacan logo"></a>';
+			echo '</div>';
 
-			<div class="marcas">
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo-ciar.svg" alt="">
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo-br.svg" alt="">
-			</div>
-		</div>
+			echo '<div class="marcas">';
+				echo '<img src="'.get_stylesheet_directory_uri().'/img/logo-ciar.svg" alt="">';
+				echo '<img src="'.get_stylesheet_directory_uri().'/img/logo-br.svg" alt="">';
+			echo '</div>';
+		echo '</div>';
 
-	</footer>
+	echo '</footer>';
 
-<?php wp_footer(); ?>
-</body>
+	get_template_part('inc/ficha');
 
-</html>
+wp_footer();
+echo '</body>';
+echo '</html>';

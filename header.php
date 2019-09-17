@@ -24,7 +24,7 @@
 		</div>
 		<?php if (is_front_page() || is_singular()): ?>
 			<div class="area-busca">
-				<a href="#" class="bt-ficha">Ficha técnica</a>
+				<a href="#ficha-tecnica" data-target="#ficha-tecnica" class="bt-ficha abre-modal">Ficha técnica</a>
 				<?php get_search_form(); ?>
 			</div>
 		<?php endif ?>
@@ -41,4 +41,4 @@
 		}
 	?>
 
-	<section class="max-large margin-one-column">
+	<section id="area-home">

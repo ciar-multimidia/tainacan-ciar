@@ -1,17 +1,30 @@
-@import "bourbon/bourbon";
-@import "mixins";
-@import url('https://fonts.googleapis.com/css?family=Rubik:300,300i,500,500i');
-
+// ========================================//
+// VARIAVEIS
+// ========================================// 
 $grafite: #333;
 $preto: #222;
 $cinza: #F0F0F0;
 
 $fonte-corpo: 'Rubik',Arial,Helvetica,sans-serif;
+$fonte-titulo: 'Khand',sans-serif;
 
+@import "bourbon/bourbon";
+@import "fontface";
+@import "mixins";
+@import "fancybox";
+@import url('//fonts.googleapis.com/css?family=Rubik:300,300i,500,500i');
+
+
+// ========================================//
+// ESTILO
+// ========================================// 
 body {
 	font-family: $fonte-corpo !important;
 	font-weight: 300;
+	font-size: 18px;
 }
+
+img {max-width: 100%; height: auto}
 
 
 a.bt-ficha {
@@ -31,7 +44,7 @@ a.bt-ficha {
 	}
 }
 
-
+//////////// CABECALHO
 #cabecalho {
 	background: $cinza;
 	padding: 30px 0;
@@ -75,13 +88,13 @@ a.bt-ficha {
 	}
 }
 
-
+//////////// BUSCA
 .busca {
 	position: relative;
 
 	input {
 		padding-right: 60px;
-	    font-size: 1.3em;
+	    font-size: 1.2em;
 	    padding: .6rem .75rem;
 	    height: auto;
 	}
@@ -95,6 +108,10 @@ a.bt-ficha {
 		}
 	}
 }
+
+
+//////////// HOME
+@import "home";
 
 
 //////////// BREADCRUMB
@@ -163,4 +180,117 @@ nav[aria-label='breadcrumb'] {
 			}
 		}
 	}
+}
+
+
+
+//////////// MODAL
+.modalciar {
+	display: none;
+	width: #212121;
+	max-width: 98%;
+	width: 1200px;
+	padding: 0 0 3em;
+
+	article {
+		padding: 0 1em 1em;
+		max-width: 960px;
+		width: 100%;
+		margin: -6em auto 0;
+		display: block;
+		position: relative;
+
+		& > *{
+			margin: 0;
+			margin-top: 2rem;
+			position: relative;
+		}
+
+		h1, h2{
+			font-family: $fonte-titulo;
+			text-align: center;
+			text-transform: uppercase;
+			font-weight: 600;
+			display: block;
+		}
+
+		h1 { font-size: 3em; }
+		h2 { font-size: 1.7em; }
+
+		.seta {
+		    width: 0;
+		    height: 0;
+		    margin: 1em auto 2em;
+		    border-left: 15px solid transparent;
+		    border-right: 15px solid transparent;
+		    border-top: 15px solid #222;
+		}
+
+		p{
+			text-align: justify;
+			@include hyphens(auto);
+			&.align-center{
+				text-align: center;
+			}
+		}
+
+		ul{
+			list-style: none;
+
+			li{ text-align: center; }
+
+			&.logos{
+				@include flex(center);
+				@include align-items(flex-end);
+				margin-top: 4rem;
+
+				li{
+					margin-right: 4rem;
+					&:last-child{
+						margin-right: 0;
+					}
+					img{
+						display: block;
+						height: 2em;
+						width: auto;
+					}
+
+					&:nth-child(1){
+						img{
+							height: 3.6rem;
+						}
+					}
+
+					&:nth-child(2){
+						img{
+							height: 2rem;
+						}
+					}
+
+					&:nth-child(3){
+						img{
+							height: 2.7rem;
+						}
+					}
+				}
+			}
+		}
+
+		a {
+			color: #2874A6; font-weight: bold;
+		}
+	}
+}
+
+.fancybox-slide--html .fancybox-close-small {
+    color: currentColor;
+    padding: 4px;
+    left: 10px;
+    right: initial;
+    top: 10px;
+    width: 38px;
+    height: 38px;
+    background: white;
+    opacity: 1;
+    border-radius: 50%;
 }
