@@ -2,7 +2,16 @@
 	width: 100%;
 	position: relative;
 
-	&:first-of-type {margin-top: 8px;}
+	&:first-of-type {margin-top: 12px;}
+	&:last-of-type {margin-bottom: 12px;}
+
+	// & > h1 {
+	// 	font-family: $fonte-titulo;
+	// 	font-weight: 600; 
+	// 	font-size: 2em;
+	// 	margin: 1em 0 0 ; display: block;
+	// }
+
 
 	.wrap {
 		width: 100%;
@@ -11,13 +20,14 @@
 
 		.sub-wrap {
 			ul {
-				margin: 8px 0; padding: 0; white-space: nowrap; position: relative;
+				margin: 6px 0; 
+				padding: 0; white-space: nowrap; position: relative;
 
 				li {
 					white-space: normal;
 					display: inline-block;
 					list-style-type: none;
-					margin: 0 8px;
+					margin: 0 12px;
 
 
 					a {
@@ -39,6 +49,15 @@
 							background: rgba(0,0,0,0.9);
 							background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0));
 							@include transition(top 0.4s ease-out);
+						}
+
+						mark {
+							position: absolute; top: 0; right: 0;
+							z-index: 3; color: white;
+							background: $preto; 
+							@include appearance(none);
+							font-size: .75em; display: inline-block;
+							padding: .4em .8em;
 						}
 
 						hgroup {

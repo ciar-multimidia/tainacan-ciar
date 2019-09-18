@@ -201,7 +201,7 @@ function breadcrumb() {
 			if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
 		}
 
-		echo '</div></nav>';
+		echo '</div><a href="javascript:history.go(-1);" title="Voltar à página anterior"><strong>&laquo; Voltar</strong></a></nav>';
 
 	}
 }

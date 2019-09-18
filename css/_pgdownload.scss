@@ -1,0 +1,29 @@
+.imagem-full {
+	width: 100%;
+	img {width: 100%;}
+}
+
+.imagem-metadados {
+	width: 100%; font-size: .85em;
+
+	& > div {
+		width: 100%;
+		margin-bottom: 1em;
+		
+		h2 {
+			// text-transform: uppercase;
+			font-weight: bold; font-size: 1.3em;
+			margin: 0; display: block;
+		}
+
+	}
+}
+
+#btdownload {
+	margin: 1em 0 0;
+	font-size: 1.7rem;
+}
+
+.btmaisimg {
+	margin-top: 1em !important;
+}

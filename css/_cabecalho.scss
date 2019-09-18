@@ -1,0 +1,91 @@
+//////////// FICHA
+a.bt-ficha {
+	display: inline-block;
+	padding: 6px 10px;
+	text-transform: uppercase;
+	color: white;
+	background: $grafite;
+	font-size: 0.8em;
+	letter-spacing: 0.09em;
+	font-weight: 500;
+
+	&:hover {
+		text-decoration: none;
+		color: white;
+		background: $preto;
+	}
+}
+
+//////////// CABECALHO
+#cabecalho {
+	background: $cinza;
+	padding: 30px 0;
+	height: 195px;
+
+	& > div {
+		@include flex(space-between);
+		height: 100%;
+
+		&.centralizado {
+			@include flex(center);
+			text-align: center;
+
+			a.bt-ficha {
+				font-size: 0.7em;
+				margin-top: 25px;
+				padding: 3px 6px;
+			}
+		}
+
+		.area-logo {
+			width: 260px;
+			@include align-self(center);
+
+			h1 {
+				font-size: 1rem;
+				margin: 20px 0 0 0;
+				line-height: 1.4;
+			}
+
+
+		}
+
+		.area-busca {
+			width: calc(100% - 340px);
+			@include flex(space-between);
+			@include flex-direction(column);
+
+			a.bt-ficha {@include align-self(flex-end);}
+
+			.exemplos {
+				width: 100%; margin: .3em 0 0;
+				font-style: italic; font-size: .85em;
+
+				a {text-decoration: underline;}
+			}
+		}
+	}
+}
+
+//////////// BUSCA
+.busca {
+	position: relative;
+
+	input {
+		padding-right: 60px;
+	    font-size: 1.2em;
+	    padding: .6rem .75rem;
+	    height: auto;
+	}
+
+	button {
+		bottom: 3px; right: 0;
+		position: absolute;
+
+		i {
+		    font-size: 1.6em;
+		}
+
+		&:hover i {color:#196F3D}
+	}
+}

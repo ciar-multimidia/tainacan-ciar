@@ -19,42 +19,32 @@ echo '<main class="mt-5 max-large margin-one-column">';
 								// echo '<h1 class="title-content-items">';
 								// 	echo '<a href="'.$image_attributes.'" download>Baixar</a>';
 								// echo '</h1>';
-								echo '<section class="tainacan-content col-9">';
-									echo '<div class="single-item-collection--document">';
+								echo '<section class="tainacan-content col-xl-8 col-md-9">';
+									echo '<div class="single-item-collection--document imagem-full">';
 										tainacan_the_document();
 									echo '</div>';
 								echo '</section>';
 
-								echo '<article role="article" class="col-3">';
-									echo "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit consequatur qui deserunt iusto nulla accusamus, harum sequi adipisci, ullam aliquid aliquam eum consectetur soluta quam commodi animi aut modi! Veritatis.";
-									// echo '<h1 class="title-content-items">'; _e( 'Information', 'tainacan-interface' ); echo '</h1>';
-									// echo '<section class="tainacan-content single-item-collection margin-two-column">';
-									// 	echo '<div class="single-item-collection--information justify-content-center">';
-									// 		echo '<div class="row">';
-									// 			echo '<div class="col s-item-collection--metadata">';
-									// 				echo '<div class="card border-0">';
-									// 					echo '<div class="card-body bg-white border-0 pl-0 pt-0 pb-1">';
-									// 					echo '<h3>'; _e( 'Thumbnail', 'tainacan-interface' ); echo '</h3>';
-									// 						the_post_thumbnail('tainacan-medium-full', array('class' => 'item-card--thumbnail mt-2'));
-									// 					echo '</div>';
-									// 				echo '</div>';
-													
-									// 				do_action( 'tainacan-interface-single-item-metadata-begin' );
-													
-									// 					$args = array(
-									// 						'before_title' => '<div><h3>',
-									// 						'after_title' => '</h3>',
-									// 						'before_value' => '<p>',
-									// 						'after_value' => '</p></div>',
-									// 					);
-									// 					//$field = null;
-									// 					tainacan_the_metadata( $args );
-													
-									// 				do_action( 'tainacan-interface-single-item-metadata-end' );
-									// 			echo '</div>';
-									// 		echo '</div>';
-									// 	echo '</div>';
-									// echo '</section>';
+								echo '<article role="article" class="col-xl-4 col-md-3 imagem-info">';
+
+									echo '<div class="imagem-metadados">';
+										do_action( 'tainacan-interface-single-item-metadata-begin' );
+										
+											$args = array(
+												'before_title' => '<h2>',
+												'after_title' => '</h2>',
+												'before_value' => '<p>',
+												'after_value' => '</p>',
+											);
+											tainacan_the_metadata( $args );
+										
+										do_action( 'tainacan-interface-single-item-metadata-end' );
+									echo '</div>';
+
+									echo '<a href="'.$image_attributes.'" class="btn btn-success btn-lg btn-block" id="btdownload" download>Baixar</a>';
+
+									// echo '<a href="'.esc_url( home_url( '/acervo' ) ).'" class="btn btn-primary btn-block btn-sm btmaisimg">Ver acervo</a>';
+
 								echo '</article>';
 
 

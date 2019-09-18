@@ -1,0 +1,148 @@
+//////////// RODAPE
+.tainacan-footer {
+	color: white;
+	padding: 0; margin-top: 80px;
+
+	.copyleft {
+		padding: 30px 10px;
+	}
+
+	.creditos {
+		padding: 30px 10px; position: relative;
+		@include flex(space-between);
+
+		&:before {
+			position: absolute; top: 0;
+			width: 100vw; height: 100%; left: 50%; 
+			background: $preto; content: "";
+			@include transform(translateX(-50%));
+		}
+
+		& > * {position: relative;}
+
+		.tainacan {
+			font-size: 12px; margin-bottom: 10px;
+		}
+
+		.marcas {
+			@include align-self(center);
+
+			img {
+				margin-left: 20px;
+			}
+		}
+	}
+}
+
+
+
+//////////// MODAL
+.modalciar {
+	display: none;
+	width: #212121;
+	max-width: 98%;
+	width: 1200px;
+	padding: 0 0 3em;
+
+	article {
+		padding: 0 1em 1em;
+		max-width: 960px;
+		width: 100%;
+		margin: -6em auto 0;
+		display: block;
+		position: relative;
+
+		& > *{
+			margin: 0;
+			margin-top: 2rem;
+			position: relative;
+		}
+
+		h1, h2{
+			font-family: $fonte-titulo;
+			text-align: center;
+			text-transform: uppercase;
+			font-weight: 600;
+			display: block;
+		}
+
+		h1 { font-size: 3em; }
+		h2 { font-size: 1.7em; }
+
+		.seta {
+		    width: 0;
+		    height: 0;
+		    margin: 1em auto 2em;
+		    border-left: 15px solid transparent;
+		    border-right: 15px solid transparent;
+		    border-top: 15px solid #222;
+		}
+
+		p{
+			text-align: justify;
+			@include hyphens(auto);
+			&.align-center{
+				text-align: center;
+			}
+		}
+
+		ul{
+			list-style: none;
+
+			li{ text-align: center; }
+
+			&.logos{
+				@include flex(center);
+				@include align-items(flex-end);
+				margin-top: 4rem;
+
+				li{
+					margin-right: 4rem;
+					&:last-child{
+						margin-right: 0;
+					}
+					img{
+						display: block;
+						height: 2em;
+						width: auto;
+					}
+
+					&:nth-child(1){
+						img{
+							height: 3.6rem;
+						}
+					}
+
+					&:nth-child(2){
+						img{
+							height: 2rem;
+						}
+					}
+
+					&:nth-child(3){
+						img{
+							height: 2.7rem;
+						}
+					}
+				}
+			}
+		}
+
+		a {
+			color: #2874A6; font-weight: bold;
+		}
+	}
+}
+
+.fancybox-slide--html .fancybox-close-small {
+    color: currentColor;
+    padding: 4px;
+    left: 10px;
+    right: initial;
+    top: 10px;
+    width: 38px;
+    height: 38px;
+    background: white;
+    opacity: 1;
+    border-radius: 50%;
+}

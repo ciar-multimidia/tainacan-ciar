@@ -8,9 +8,9 @@
 
 	echo '<footer class="tainacan-footer"'.$marginFooter.'>';
 
-		echo '<div class="container-fluid max-large margin-one-column copyleft">';
-			get_template_part('inc/disclaimer'); 
-		echo '</div>';
+		// echo '<div class="container-fluid max-large margin-one-column copyleft">';
+		// 	get_template_part('inc/disclaimer'); 
+		// echo '</div>';
 	
 		echo '<div class="container-fluid max-large margin-one-column creditos">';
 			echo '<div class="tainacan">';

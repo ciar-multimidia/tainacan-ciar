@@ -7,6 +7,23 @@ jQuery(document).ready(function($) {
     $.fancybox.open($(thisTarget));
   });
 
+
+
+  //////////////////////////////////////// PARA O DOWNLOAD
+  var $btDownload = $('#btdownload');
+  var textoOriginalBt = $btDownload.text();
+  $btDownload.click(function() {
+    $( this ).text('Aguarde...');
+    $(window).on('focus', function(event) {
+      $btDownload.text(textoOriginalBt);
+      $(this).off('focus');
+    });
+  });
+
+
+
+
+  //////////////////////////////////////// SLIDE DE IMAGENS DA HOME
   var $slides_home = $(".wrap");
   var velocidadeSlide = 1;
   var animarEmLoop = function($el, inicial, final, velocidade){
@@ -32,8 +49,7 @@ jQuery(document).ready(function($) {
   			complete: function(){
   				animarEmLoop($el, inicial, final, velocidade);
   			}
-  		}
-	);
+  		});
   }
   $slides_home.each(function(index, el) {
   	var $slide = $(el).find(".sub-wrap ul");
@@ -41,7 +57,12 @@ jQuery(document).ready(function($) {
   	var larguraAnimacao = $ultimaImgSlide.position().left + $ultimaImgSlide.outerWidth();
   	var imagemASerDuplicada = 0;
   	var ultimaImagemASerDuplicada = $slide.children().length-1;
-  	var larguraDesejadaSlide = $(window).width()*2;
+    var larguraDesejadaSlide;
+    if (larguraAnimacao < $(window).width()) {
+      larguraDesejadaSlide = $(window).width()*2;
+    } else{
+      larguraDesejadaSlide = larguraAnimacao+$(window).width();
+    }
   	var larguraSlide = $slide.children().last().position().left + $slide.children().last().outerWidth();
   	while (larguraSlide < larguraDesejadaSlide){
   		console.log(index, larguraSlide, larguraDesejadaSlide);
