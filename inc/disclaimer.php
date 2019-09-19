@@ -1,1 +1,6 @@
-As imagens dispostas aqui podem ser usados e compartilhados por terceiros, inclusive em sala de aula e pesquisas acadêmicas, desde que acompanhados dos créditos de seus autores, que possuem inteira responsabilidade pelo conteúdo. A distribuição é gratuita e o uso comercial proibido.
+<?php 
+echo '<div class="aviso-copyright"'; 
+	if (is_home() || is_front_page()) { echo ' id="aviso-popup"'; }
+echo '>'; 
+	echo '<p>As imagens dispostas aqui podem ser usadas e compartilhadas por terceiros, inclusive em sala de aula e pesquisas acadêmicas, desde que acompanhadas dos créditos de seus autores. A distribuição é gratuita e o uso comercial proibido.</p><button class="btn btn-outline-dark">Entendi</button>';
+echo '</div>';

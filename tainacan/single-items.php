@@ -11,14 +11,11 @@ echo '<main class="mt-5 max-large margin-one-column">';
 						do_action( 'tainacan-interface-single-item-after-title' ); 
 						$image_attributes = wp_get_attachment_url(get_post_thumbnail_id());
 					
-					// echo '<div class="mt-3 tainacan-single-post collection-single-item">';
 					echo '<div class="tainacan-single-post collection-single-item">';
 						echo '<article role="article" id="post_'.get_the_ID().'"'; post_class('row'); echo '>';
 
 							if ( tainacan_has_document() ) :
-								// echo '<h1 class="title-content-items">';
-								// 	echo '<a href="'.$image_attributes.'" download>Baixar</a>';
-								// echo '</h1>';
+
 								echo '<section class="tainacan-content col-xl-8 col-md-9">';
 									echo '<div class="single-item-collection--document imagem-full">';
 										tainacan_the_document();
@@ -27,6 +24,7 @@ echo '<main class="mt-5 max-large margin-one-column">';
 
 								echo '<article role="article" class="col-xl-4 col-md-3 imagem-info">';
 
+									// taxonomias automaticas do tainacan sobre o arquivo
 									echo '<div class="imagem-metadados">';
 										do_action( 'tainacan-interface-single-item-metadata-begin' );
 										
@@ -41,9 +39,14 @@ echo '<main class="mt-5 max-large margin-one-column">';
 										do_action( 'tainacan-interface-single-item-metadata-end' );
 									echo '</div>';
 
+
+									// botao download
 									echo '<a href="'.$image_attributes.'" class="btn btn-success btn-lg btn-block" id="btdownload" download>Baixar</a>';
 
-									// echo '<a href="'.esc_url( home_url( '/acervo' ) ).'" class="btn btn-primary btn-block btn-sm btmaisimg">Ver acervo</a>';
+									// aviso copyright
+									get_template_part('inc/disclaimer'); 
+
+									
 
 								echo '</article>';
 

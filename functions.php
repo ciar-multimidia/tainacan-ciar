@@ -4,6 +4,18 @@
 // ========================================// 
 add_action( 'after_setup_theme', 'ciar_setup' );
 function ciar_setup() {
+    if( function_exists('acf_add_options_page') ) {
+      acf_add_options_page(array(
+        'page_title'  => 'Configurações da página inicial do Acervo Ciar',
+        'menu_title'  => 'Página inicial',
+        'menu_slug'   => 'ciar-opcoes',
+        'capability'  => 'edit_posts',
+        'icon_url'    => 'dashicons-admin-home',
+        'position'    => 3,
+        'redirect'    => false
+      ));
+  	}
+
 	// estilos e scripts
 	add_action( 'wp_enqueue_scripts', 'ciar_estilo_script', PHP_INT_MAX); 
 

@@ -9,7 +9,7 @@
 	echo '<footer class="tainacan-footer"'.$marginFooter.'>';
 
 		// echo '<div class="container-fluid max-large margin-one-column copyleft">';
-		// 	get_template_part('inc/disclaimer'); 
+		// 	
 		// echo '</div>';
 	
 		echo '<div class="container-fluid max-large margin-one-column creditos">';
@@ -23,6 +23,8 @@
 				echo '<img src="'.get_stylesheet_directory_uri().'/img/logo-br.svg" alt="">';
 			echo '</div>';
 		echo '</div>';
+
+		if (is_home() || is_front_page()) { get_template_part('inc/disclaimer'); }
 
 	echo '</footer>';
 

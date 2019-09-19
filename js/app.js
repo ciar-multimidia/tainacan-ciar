@@ -93,5 +93,32 @@ jQuery(document).ready(function($) {
   	}
   	animarEmLoop($(el).find(".sub-wrap"), xInicial, xFinal, tempoAnimacao);
   });
+
+
+
+  //////////////////////////////////////// COPYRIGHT
+  var $aviso = $(".aviso-copyright");
+  var $avisoDuplicate = $aviso.clone().removeAttr('id');
+
+  if (!sessionStorage.getItem("copyright-popup")) {
+    setTimeout(function(){
+      $aviso
+      .addClass('aparece')
+      .find('button')
+      .on('click', function(event) {
+        $aviso.removeClass('aparece');
+        sessionStorage.setItem("copyright-popup", "true");
+        $aviso.on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(event) {
+          $aviso.remove();
+        });
+      });
+
+
+    }, 2000);
+  } else{
+    $aviso.remove();    
+  }
+
+
 });  
 
