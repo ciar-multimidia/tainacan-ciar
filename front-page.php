@@ -8,26 +8,18 @@ echo '<section class="home-acervo">';
 			while (have_rows('imgslinha1','option')) : the_row();
 				$imagem = get_sub_field('imagem');
 				$link = get_sub_field('link');
-				$tipos = get_sub_field('tipo');
-				$areas = get_sub_field('area');
-				$tags = get_sub_field('tags');
+				$tipo = get_sub_field('tipo');
+				$area = get_sub_field('area');
 
 			echo '<li>'; 
-				if($link) { echo '<a href="http://acervoimg.local/acervo/fig-3-jpg/">'; }
-					if($imagem) {echo '<img src="'.$imagem['sizes']['medium'].'" alt="'.$imagem['alt'].'">';}
-					if($tipos) {
-						echo '<mark>';
-						foreach ($tipos as $tipo) {
-							$term = get_term( $tipo, 'tipo');
-							var_dump($term);
-						}
+				if($link) { echo '<a href="'.$link['url'].'">'; }
+					echo '<img src="'.$imagem['sizes']['medium'].'" alt="'.$imagem['alt'].'">';
+					if($tipo) { echo '<mark>'.$tipo.'</mark>'; }
 
-						// print_r($tipos);
-						echo '</mark>';
-					}
-
-					echo '<hgroup><h1>Chi Clayborn</h1>'; 
-					echo '<h2>Dewey, broadtail, rotundo</h2></hgroup>';
+					echo '<hgroup>'; 
+						echo '<h1>'.$imagem['title'].'</h1>';
+						if($area) {echo '<h2>'.$area.'</h2>';}
+					echo '</hgroup>';
 				if($link) { echo '</a>'; }
 			echo '</li>';
 			endwhile;
