@@ -140,6 +140,112 @@
             "endpoint": 0
         },
         {
+            "key": "field_5d8a0411ce75e",
+            "label": "Segunda linha",
+            "name": "imgslinha_2",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_5d837a30bedd1",
+            "min": 1,
+            "max": 12,
+            "layout": "block",
+            "button_label": "Adicionar imagem",
+            "sub_fields": [
+                {
+                    "key": "field_5d8a0411ce75f",
+                    "label": "Arquivo da imagem",
+                    "name": "imagem",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_5d8a0411ce760",
+                    "label": "Página do download",
+                    "name": "link",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5d8a0411ce75f",
+                                "operator": "!=empty",
+                                "value": ""
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "60",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
+                },
+                {
+                    "key": "field_5d8a0411ce761",
+                    "label": "Tipo da imagem",
+                    "name": "tipo",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5d8a0411ce762",
+                    "label": "Área de conhecimento",
+                    "name": "area",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
+        },
+        {
             "key": "field_5d837c3c052cc",
             "label": "Linha 3",
             "name": "",
@@ -154,6 +260,112 @@
             },
             "placement": "top",
             "endpoint": 0
+        },
+        {
+            "key": "field_5d889a58e6142",
+            "label": "Terceira linha",
+            "name": "imgslinha3",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_5d837a30bedd1",
+            "min": 1,
+            "max": 12,
+            "layout": "block",
+            "button_label": "Adicionar imagem",
+            "sub_fields": [
+                {
+                    "key": "field_5d889a58e6143",
+                    "label": "Arquivo da imagem",
+                    "name": "imagem",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_5d889a58e6144",
+                    "label": "Página do download",
+                    "name": "link",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5d889a58e6143",
+                                "operator": "!=empty",
+                                "value": ""
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "60",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
+                },
+                {
+                    "key": "field_5d889a58e6145",
+                    "label": "Tipo da imagem",
+                    "name": "tipo",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5d889a58e6146",
+                    "label": "Área de conhecimento",
+                    "name": "area",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
         }
     ],
     "location": [
@@ -173,5 +385,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1568984146
+    "modified": 1569326113
 }
