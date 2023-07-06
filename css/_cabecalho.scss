@@ -19,49 +19,125 @@ a.bt-ficha {
 //////////// CABECALHO
 #cabecalho {
 	background: $cinza;
-	padding: 30px 0;
-	height: 195px;
+	// height: 195px;
 
-	& > div {
-		@include flex(space-between);
+	& > .opiniao{
+		background-color: #E6E6E6;
+		div{
+			padding-top: 0.5em;
+			padding-bottom: 0.5em;
+			padding-left: 1em;
+			padding-right: 1em;
+		}
+		p{
+			text-align: center;
+			font-size: .8em;
+			line-height: 1.4;
+			margin: 0;
+
+		}
+	}
+
+	& > .conteudo-cabecalho{
+		padding: 30px 0;
+		display: flex;
+		justify-content: space-between;
 		height: 100%;
 
-		&.centralizado {
-			@include flex(center);
-			text-align: center;
-
-			a.bt-ficha {
-				font-size: 0.7em;
-				margin-top: 25px;
-				padding: 3px 6px;
-			}
-		}
-
 		.area-logo {
+			align-self: center;
 			width: 260px;
-			@include align-self(center);
+			a{
+				display: block;
+				width: 100%;
+				img{
+					display: block;
+					width: 100%;
+				}
+			}
 
 			h1 {
 				font-size: 1rem;
 				margin: 20px 0 0 0;
 				line-height: 1.4;
 			}
-
-
 		}
 
 		.area-busca {
 			width: calc(100% - 340px);
-			@include flex(space-between);
-			@include flex-direction(column);
+			display: flex;
+			justify-content: space-between;
+			flex-direction: column;
 
-			a.bt-ficha {@include align-self(flex-end);}
+			a.bt-ficha {align-self: flex-end;}
 
 			.exemplos {
 				width: 100%; margin: .3em 0 0;
 				font-style: italic; font-size: .85em;
 
 				a {text-decoration: underline;}
+			}
+		}
+	}
+
+	&.simples{
+		// height: 140px;
+
+	& > .conteudo-cabecalho {
+		align-items: center;
+	}
+
+		.area-logo{
+			width: auto;
+			display: flex;
+			align-items: flex-start;
+			a{
+				width: 200px;
+			}
+
+			h1{
+				max-width: 300px;
+				margin: 0;
+				margin-left: 1em;
+				padding-top: 0;
+			}
+		}
+	}
+
+
+	@media screen and (max-width: 900px) {
+		&, &.simples{
+			& > .conteudo-cabecalho{
+				display: block;
+				.area-logo{
+					width: auto;
+					display: block;
+					a{
+						width: 150px;
+						max-width: 100%;
+						margin: 0 auto;
+					}
+					h1{
+						margin: .5em 1.5em;
+						padding-top: 0;
+						text-align: center;
+					}
+				}
+
+				.area-busca{
+					width: auto;
+					margin-top: 1em;
+					font-size: .8em;
+
+					a.bt-ficha{
+						margin-left: auto;
+						margin-right: auto;
+					}
+
+					form{
+						margin-top: 1em;
+					}
+				}
 			}
 		}
 	}

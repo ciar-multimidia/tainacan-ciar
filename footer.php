@@ -14,8 +14,10 @@
 	
 		echo '<div class="container-fluid max-large margin-one-column creditos">';
 			echo '<div class="tainacan">';
-				echo '<p>Tecnologia <a href="https://wordpress.org/" target="_blank" rel="noopener">Wordpress</a> e</p>';
-				echo '<a href="https://tainacan.org/" target="_blank" rel="noopener"><img src="'.get_stylesheet_directory_uri().'/img/logo-tainacan.svg" alt="Tainacan logo"></a>';
+				echo '<p class="creditos-tecnologias">Tecnologia <a href="https://wordpress.org/" target="_blank" rel="noopener">Wordpress</a> e</p>';
+				echo '<a href="https://tainacan.org/" target="_blank" rel="noopener" class="link-site-tainacan"><img src="'.get_stylesheet_directory_uri().'/img/logo-tainacan.svg" alt="Tainacan logo"></a>';
+
+				echo '<p class="opiniao">Sugestões e críticas? Deixe sua avaliação sobre o acervo <a href="https://forms.gle/2fCBNtPNNLHTAQ7a9" target="blank">neste formulário!</a></p>';
 			echo '</div>';
 
 			echo '<div class="marcas">';

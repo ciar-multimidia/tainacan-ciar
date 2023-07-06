@@ -9,27 +9,67 @@
 
 	.creditos {
 		padding: 30px 10px; position: relative;
-		@include flex(space-between);
+		display: flex;
+		justify-content: space-between;
 
-		&:before {
-			position: absolute; top: 0;
-			width: 100vw; height: 100%; left: 50%; 
-			background: $grafite; content: "";
-			@include transform(translateX(-50%));
+		@media screen and (max-width: 600px) {
+			display: block;
 		}
+
 
 		& > * {position: relative;}
 
 		.tainacan {
-			font-size: 12px; margin-bottom: 10px;
+			 margin-bottom: 10px;
+			p{
+				margin: 0;
+			}
+
+			p.creditos-tecnologias{
+				font-size: 12px;
+			}
+			a.link-site-tainacan{
+				img{
+					// display: block;
+				}
+			}
+			@media screen and (max-width: 600px) {
+				text-align: center;
+			}
+
+			.opiniao{
+				font-size: 14px;
+				color: white;
+				margin-top: 1em;
+				a{
+					color: white;
+					text-decoration: underline;
+				}
+			}
+
 		}
 
 		.marcas {
-			@include align-self(center);
-
+			display: flex;
+			align-items: center;
 			img {
+				display: block;
 				margin-left: 20px;
+				height: 2.5em;
 			}
+
+			@media screen and (max-width: 600px) {
+				display: block;
+				margin-top: 30px;
+
+				img{
+					display: block;
+					width: 120px;
+					max-width: 100%;
+					margin: 10px auto 0;
+				}
+			}
+
 		}
 	}
 }
@@ -39,18 +79,33 @@
 //////////// MODAL
 .modalciar {
 	display: none;
-	width: #212121;
+	color: #212121;
 	max-width: 98%;
 	width: 1200px;
 	padding: 0 0 3em;
 
+	@keyframes modalSobe {
+		0%{transform: translateY(5em)};
+		100%{transform: translateY(0)};
+	}
+	animation: modalSobe 0.3s ease-out 0s 1 normal forwards;
+
+	@media screen and (max-width: 900px) {
+		font-size: .8em;
+	}
+
+
 	article {
-		padding: 0 1em 1em;
+		padding: 0 1.5em 1em;
 		max-width: 960px;
 		width: 100%;
 		margin: -6em auto 0;
 		display: block;
 		position: relative;
+
+		@media screen and (max-width: 900px) {
+			margin-top: -10vw;
+		}
 
 		& > *{
 			margin: 0;
@@ -88,19 +143,18 @@
 
 		ul{
 			list-style: none;
-
+			padding-left: 0;
 			li{ text-align: center; }
 
 			&.logos{
-				@include flex(center);
-				@include align-items(flex-end);
+				display: flex;
+				justify-content: center;
+				align-items: flex-end;
+				flex-wrap: wrap;
 				margin-top: 4rem;
 
 				li{
-					margin-right: 4rem;
-					&:last-child{
-						margin-right: 0;
-					}
+					margin: 1em 2em;
 					img{
 						display: block;
 						height: 2em;
@@ -134,15 +188,37 @@
 	}
 }
 
-.fancybox-slide--html .fancybox-close-small {
-    color: currentColor;
-    padding: 4px;
-    left: 10px;
-    right: initial;
-    top: 10px;
-    width: 38px;
-    height: 38px;
-    background: white;
-    opacity: 1;
-    border-radius: 50%;
-}
+.fancybox-slide--html{
+	padding: 4em 1em 10em;
+	@media screen and (max-width: 900px) {
+		padding: .5em .5em 4em;
+
+		body.admin-bar &{
+			padding-top: 3.5em;
+		}
+	}
+
+
+
+	.fancybox-close-small {
+	    color: currentColor;
+	    padding: 4px;
+	    left: 10px;
+	    right: initial;
+	    top: 10px;
+	    width: 38px;
+	    height: 38px;
+	    background: white;
+	    opacity: 1;
+	    border-radius: 50%;
+
+		@media screen and (max-width: 900px) {
+			padding: 2px;
+			left: 6px;
+			top: 6px;
+			width: 27px;
+			height: 27px;
+		}
+
+	}	
+} 

@@ -9,15 +9,20 @@
 
 		<h2>Universidade Federal de Goiás</h2>
 		<ul>
-			<li><strong>Reitor</strong> • Edward Madureira Brasil</li>
-			<li><strong>Vice-Reitora</strong> • Sandramara Matias Chaves</li>
+			<li><strong>Reitora</strong> • Angelita Pereira de Lima</li>
+			<li><strong>Vice-Reitor</strong> • Jesiel Freitas Carvalho</li>
 		</ul>
 
 		<h2>Centro Integrado de Aprendizagem em Rede</h2>
 		<ul>
-			<li><strong>Diretora</strong> • Marília de Goyaz</li>
+			<li><strong>Diretor</strong> • Wagner Bandeira</li>
 			<li><strong>Vice-diretora</strong> • Silvia Figueiredo</li>
 			<li><strong>Coordernadora de Publicação</strong> • Ana Bandeira</li>
+			<li><strong>Coordenador de Comunicação</strong> • Raniê Solarevisky de Jesus</li>
+			<li><strong>Coordenadora Pedagógica e Gestão Moodle</strong> • Janice Lopes</li>
+			<li><strong>Coordenador da Equipe Tecnológica</strong> • Amilton Araújo</li>
+
+
 		</ul>
 
 		<p class="align-center">

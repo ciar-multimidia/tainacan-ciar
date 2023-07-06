@@ -25,7 +25,7 @@ jQuery(document).ready(function($) {
 
   //////////////////////////////////////// SLIDE DE IMAGENS DA HOME
   var $slides_home = $(".wrap");
-  var velocidadeSlide = 1;
+  var velocidadeSlide = 3;
   var animarEmLoop = function($el, inicial, final, velocidade){
   	$el
   	.prop('posx', inicial)
